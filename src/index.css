@@ -5,6 +5,16 @@
 @tailwind utilities;
 
 @layer base {
+  /* Desktop par thoda chhota base size (16px -> 15px), isse sab kuch zyada zoomed nahi lagta */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
   body {
     @apply font-body text-ink bg-white antialiased;
   }

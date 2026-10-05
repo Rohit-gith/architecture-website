@@ -2,6 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
+    // Content ki max-width 1200px par rok di, taaki bade screen / 125% zoom par page "zoom" na dikhe
+    container: {
+      center: true,
+      padding: { DEFAULT: "1rem", sm: "1.5rem", lg: "2rem" },
+      screens: { sm: "640px", md: "768px", lg: "1024px", xl: "1200px" },
+    },
     extend: {
       colors: {
         ink: "#111111",
