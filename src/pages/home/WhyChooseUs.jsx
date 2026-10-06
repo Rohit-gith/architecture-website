@@ -11,7 +11,7 @@ const points = [
 
 const WhyChooseUs = () => (
   <section className="grid lg:grid-cols-[1.15fr_1fr]">
-    <div className="min-h-[300px]"><ImageBox src="/images/home/why-us.jpg" alt="Why choose us" /></div>
+    <div className="min-h-[300px]"><ImageBox src="/images/home/why-us.png" alt="Why choose us" /></div>
     <div className="px-6 md:px-16 py-14 flex flex-col justify-center">
       <SectionTitle align="left" eyebrow="Why Choose Us" title="Design with Purpose" />
       <p className="-mt-6 mb-8 text-neutral-600 leading-relaxed">

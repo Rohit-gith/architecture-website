@@ -23,7 +23,7 @@ const AboutPreview = () => (
         <Button to="/about" variant="dark" arrow>Know More</Button>
       </div>
 
-      <div className="aspect-[16/10]"><ImageBox src="/images/home/about.jpg" alt="About us" /></div>
+      <div className="aspect-[16/10]"><ImageBox src="/images/home/about.png" alt="About us" /></div>
 
       <div className="bg-cream p-8 space-y-6">
         {stats.map(({ icon: Icon, value, label }) => (

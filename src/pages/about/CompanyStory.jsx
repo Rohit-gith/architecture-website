@@ -24,7 +24,7 @@ const CompanyStory = () => (
             Replace this text with your own company story.
           </p>
         </div>
-        <div className="aspect-[4/3]"><ImageBox src="" alt="Our story" /></div>
+        <div className="aspect-[4/3]"><ImageBox src="/images/about/our-story.png" alt="Our story" /></div>
       </div>
       <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((s) => (
