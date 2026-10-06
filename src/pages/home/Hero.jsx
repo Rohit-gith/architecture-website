@@ -15,7 +15,7 @@ const Hero = () => (
       muted
       loop
       playsInline
-      poster="/images/hero/hero.jpg"
+      poster="/images/hero/hero.webp"
     >
       <source src="/videos/hero.mp4" type="video/mp4" />
     </video>
