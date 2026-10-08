@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import Button from "../../components/common/Button";
+import { buildWhatsappLink } from "../../config/whatsapp";
 
 const projectTypes = ["Residential", "Commercial", "Interior Design", "Landscape", "Other"];
 const initial = { name: "", email: "", phone: "", type: "", message: "" };
@@ -43,30 +44,48 @@ const Glow = ({ children }) => (
 
 const ContactForm = () => {
   const [values, setValues] = useState(initial);
-  const [sent, setSent] = useState(false);
+  const [waUrl, setWaUrl] = useState(""); // khaali = abhi bheja nahi
 
   const handleChange = (e) => setValues({ ...values, [e.target.name]: e.target.value });
 
+  // Form submit hote hi poora message WhatsApp me khul jata hai (number: src/config/whatsapp.js)
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: yahan API / email service connect karo
-    console.log(values);
-    setSent(true);
+    const lines = [
+      "Hello, I would like to discuss a project.",
+      "",
+      `*Name:* ${values.name}`,
+      `*Email:* ${values.email}`,
+    ];
+    if (values.phone) lines.push(`*Phone:* ${values.phone}`);
+    if (values.type) lines.push(`*Project type:* ${values.type}`);
+    lines.push(`*Message:* ${values.message}`);
+
+    const url = buildWhatsappLink(lines.join("\n"));
+    window.open(url, "_blank", "noopener,noreferrer");
+    setWaUrl(url);
     setValues(initial);
   };
 
-  if (sent) {
+  if (waUrl) {
     return (
       <Glow>
         <div className={`${glass} p-10 text-center`}>
           <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white">
             <Check size={28} />
           </span>
-          <h3 className="mt-6 text-2xl font-medium">Thank you!</h3>
-          <p className="mt-2 text-neutral-600">We have received your message and will contact you within 24 hours.</p>
-          <button onClick={() => setSent(false)} className="mt-6 text-sm text-accent underline">
-            Send another message
-          </button>
+          <h3 className="mt-6 text-2xl font-medium">Almost done!</h3>
+          <p className="mt-2 text-neutral-600">
+            WhatsApp has opened with your message. Press Send there and we will reply within 24 hours.
+          </p>
+          <a href={waUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm text-accent underline">
+            WhatsApp did not open? Click here
+          </a>
+          <div>
+            <button onClick={() => setWaUrl("")} className="mt-3 text-sm text-neutral-500 underline">
+              Send another message
+            </button>
+          </div>
         </div>
       </Glow>
     );

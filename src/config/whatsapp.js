@@ -5,6 +5,14 @@ const whatsapp = {
   message: "Hello, I would like to discuss a project with you.",
 };
 
-export const whatsappLink = `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(whatsapp.message)}`;
+// Kisi bhi text ke saath WhatsApp chat ka link banata hai
+export const buildWhatsappLink = (text) => `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(text)}`;
+
+// Floating button ke liye (default message)
+export const whatsappLink = buildWhatsappLink(whatsapp.message);
 
 export default whatsapp;
+
+
+
+
