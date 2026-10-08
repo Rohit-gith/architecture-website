@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Button from "../../components/common/Button";
 
 // Video: public/videos/hero.mp4 (poster image: public/images/hero/hero.jpg)
@@ -6,6 +7,39 @@ const stats = [
   { value: "250+", label: "Projects Completed" },
   { value: "15+", label: "Cities Served" },
 ];
+
+// "250+" jaisi value ko 0 se 250 tak smooth chadhata hai (shuru me tez, ant me dheere).
+// Reduced-motion wale users ko seedha final number dikhta hai.
+const CountUp = ({ value, duration = 2000 }) => {
+  const end = parseInt(value, 10);
+  const suffix = value.replace(/[0-9]/g, "");
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCurrent(end);
+      return undefined;
+    }
+    let raf;
+    let start;
+    const tick = (t) => {
+      if (start === undefined) start = t;
+      const p = Math.min((t - start) / duration, 1);
+      setCurrent(Math.round(end * (1 - Math.pow(1 - p, 4))));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [end, duration]);
+
+  // Invisible final number pehle se jagah gher leta hai, isliye chadhte waqt layout hilta nahi
+  return (
+    <span className="relative inline-block">
+      <span className="invisible">{end}{suffix}</span>
+      <span className="absolute inset-0">{current}{suffix}</span>
+    </span>
+  );
+};
 
 const Hero = () => (
   <section className="relative min-h-screen flex items-center bg-gradient-to-br from-neutral-900 to-neutral-700 text-white overflow-hidden">
@@ -58,15 +92,19 @@ const Hero = () => (
       </div>
     </div>
 
-    {/* Glass stats bar */}
-    <div className="absolute bottom-0 inset-x-0 border-t border-white/15 bg-black/30 backdrop-blur-md">
-      <div className="container mx-auto px-4 py-5 grid grid-cols-3 gap-4">
-        {stats.map((s) => (
-          <div key={s.label} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
-            <span className="font-heading text-2xl md:text-3xl text-[#d9b56d]">{s.value}</span>
-            <span className="text-[10px] md:text-xs uppercase tracking-widest text-neutral-200">{s.label}</span>
-          </div>
-        ))}
+    {/* Glass stats bar (gol / rounded) */}
+    <div className="absolute bottom-6 md:bottom-8 inset-x-0">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-3 divide-x divide-white/20 rounded-[2rem] md:rounded-full border border-white/15 bg-black/30 px-5 py-4 md:px-12 md:py-5 backdrop-blur-md">
+          {stats.map((s) => (
+            <div key={s.label} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 px-3 md:px-10 first:pl-0 last:pr-0">
+              <span className="font-heading text-2xl md:text-3xl text-[#d9b56d]">
+                <CountUp value={s.value} />
+              </span>
+              <span className="text-[10px] md:text-xs uppercase tracking-widest text-neutral-200">{s.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
