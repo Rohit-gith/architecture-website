@@ -1,7 +1,7 @@
 // WhatsApp number: country code ke saath, bina + aur bina space (91 = India)
 const whatsapp = {
-  number: "919692398458",
-  displayNumber: "+91 9692398458",
+  number: "916372569846",
+  displayNumber: "+91 6372569846",
   message: "Hello, I would like to discuss a project with you.",
 };
 

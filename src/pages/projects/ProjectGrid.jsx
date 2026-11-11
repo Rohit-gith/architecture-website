@@ -1,5 +1,6 @@
 import Container from "../../components/common/Container";
 import ProjectCard from "../../components/ui/ProjectCard";
+import Reveal from "../../components/common/Reveal";
 import projects from "../../data/projects";
 
 const ProjectGrid = ({ active = "All" }) => {
@@ -12,7 +13,9 @@ const ProjectGrid = ({ active = "All" }) => {
           <p className="text-center text-neutral-500">No projects in this category yet.</p>
         ) : (
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {list.map((p) => <ProjectCard key={p.id} project={p} />)}
+            {list.map((p, i) => (
+              <Reveal key={p.id} delay={(i % 3) * 100}><ProjectCard project={p} /></Reveal>
+            ))}
           </div>
         )}
       </Container>

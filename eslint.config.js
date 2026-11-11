@@ -4,7 +4,7 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default [
-  { ignores: ["dist"] },
+  { ignores: ["dist", "_backup_src"] },
   js.configs.recommended,
   {
     files: ["**/*.{js,jsx}"],
@@ -20,5 +20,9 @@ export default [
       "react/jsx-uses-vars": "error",
       "react/jsx-uses-react": "error",
     },
+  },
+  {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: { globals: globals.node },
   },
 ];

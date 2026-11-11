@@ -1,12 +1,13 @@
 import Container from "../../components/common/Container";
 import SectionTitle from "../../components/common/SectionTitle";
 import ImageBox from "../../components/common/ImageBox";
+import CountUp from "../../components/common/CountUp";
 
 const stats = [
-  { value: "15+", label: "Years of Experience" },
-  { value: "120+", label: "Projects Completed" },
-  { value: "40+", label: "Team Members" },
-  { value: "25", label: "Awards" },
+  { value: "10+", label: "Years of Experience" },
+  { value: "250+", label: "Projects Completed" },
+  { value: "15+", label: "Cities Served" },
+  { value: "12+", label: "Awards" },
 ];
 
 const CompanyStory = () => (
@@ -21,7 +22,9 @@ const CompanyStory = () => (
             carefully, design thoughtfully and build with care.
           </p>
           <p className="mt-4 text-neutral-600 leading-relaxed">
-            Replace this text with your own company story.
+            From private homes and interiors to commercial buildings and landscapes, every project
+            starts with understanding the site, the budget and the people who will use the space.
+            We stay involved from the first sketch to the final handover.
           </p>
         </div>
         <div className="aspect-[4/3]"><ImageBox src="/images/about/our-story.png" alt="Our story" /></div>
@@ -29,7 +32,7 @@ const CompanyStory = () => (
       <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((s) => (
           <div key={s.label}>
-            <p className="font-heading text-4xl md:text-5xl text-accent">{s.value}</p>
+            <p className="font-heading text-4xl md:text-5xl text-accent"><CountUp value={s.value} /></p>
             <p className="mt-2 text-sm uppercase tracking-widest text-neutral-500">{s.label}</p>
           </div>
         ))}

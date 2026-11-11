@@ -22,6 +22,7 @@ const Navbar = () => {
   // Page badalte hi dropdown band
   useEffect(() => {
     setOpenMenu(null);
+    setOpen(false);
   }, [pathname]);
 
   const isPath = (path) => (path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(path + "/"));
@@ -29,10 +30,11 @@ const Navbar = () => {
   const base = "text-sm transition hover:text-accent";
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition ${solid ? "bg-white text-ink shadow-sm" : "bg-transparent text-white"}`}>
-      <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${solid ? "bg-white text-ink" : "bg-transparent text-white"} ${scrolled ? "shadow-md" : solid ? "shadow-sm" : ""}`}>
+      {/* Scroll karne par navbar patla ho jata hai (80px -> 64px) */}
+      <nav className={`container mx-auto px-4 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
         <Link to="/" className="flex items-center gap-3">
-          <Building2 size={34} strokeWidth={1.25} className="text-accent" />
+          <Building2 size={34} strokeWidth={1.25} className={`text-accent transition-transform duration-300 ${scrolled ? "scale-90" : ""}`} />
           <span className="leading-tight">
             <span className="block font-body text-lg font-medium uppercase tracking-[0.2em]">{siteConfig.name}</span>
             <span className="block text-[9px] uppercase tracking-[0.25em] text-accent">Architecture &amp; Design</span>
@@ -105,7 +107,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <ul className="md:hidden border-t border-neutral-200 px-4 py-4 space-y-4">
+        <ul className="md:hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-neutral-200 px-4 py-5 space-y-4">
           {navLinks.map((l) => (
             <li key={l.path}>
               <Link to={l.path} className={`${base} ${isActive(l) ? "text-accent" : ""}`} onClick={() => setOpen(false)}>
@@ -124,6 +126,9 @@ const Navbar = () => {
               )}
             </li>
           ))}
+          <li className="pt-2">
+            <Button to="/contact" arrow className="w-full justify-center">Get a Quote</Button>
+          </li>
         </ul>
       )}
     </header>

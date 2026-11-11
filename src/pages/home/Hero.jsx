@@ -1,55 +1,23 @@
-import { useEffect, useState } from "react";
 import Button from "../../components/common/Button";
+import CountUp from "../../components/common/CountUp";
 
-// Video: public/videos/hero.mp4 (poster image: public/images/hero/hero.jpg)
+// Video: public/videos/hero.mp4. Poster (video load hone tak dikhne wali image): public/images/hero/hero-poster.webp
 const stats = [
   { value: "10+", label: "Years of Experience" },
   { value: "250+", label: "Projects Completed" },
   { value: "15+", label: "Cities Served" },
 ];
 
-// "250+" jaisi value ko 0 se 250 tak smooth chadhata hai (shuru me tez, ant me dheere).
-// Reduced-motion wale users ko seedha final number dikhta hai.
-const CountUp = ({ value, duration = 2000 }) => {
-  const end = parseInt(value, 10);
-  const suffix = value.replace(/[0-9]/g, "");
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setCurrent(end);
-      return undefined;
-    }
-    let raf;
-    let start;
-    const tick = (t) => {
-      if (start === undefined) start = t;
-      const p = Math.min((t - start) / duration, 1);
-      setCurrent(Math.round(end * (1 - Math.pow(1 - p, 4))));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [end, duration]);
-
-  // Invisible final number pehle se jagah gher leta hai, isliye chadhte waqt layout hilta nahi
-  return (
-    <span className="relative inline-block">
-      <span className="invisible">{end}{suffix}</span>
-      <span className="absolute inset-0">{current}{suffix}</span>
-    </span>
-  );
-};
-
 const Hero = () => (
-  <section className="relative min-h-screen flex items-center bg-gradient-to-br from-neutral-900 to-neutral-700 text-white overflow-hidden">
+  <section className="relative min-h-screen flex flex-col justify-center md:flex-row md:items-center bg-gradient-to-br from-neutral-900 to-neutral-700 text-white overflow-hidden">
     <video
       className="absolute inset-0 h-full w-full object-cover"
       autoPlay
       muted
       loop
       playsInline
-      poster="/images/hero/hero.webp"
+      preload="auto"
+      poster="/images/hero/hero-poster.webp"
     >
       <source src="/videos/hero.mp4" type="video/mp4" />
     </video>
@@ -58,7 +26,7 @@ const Hero = () => (
     <div className="absolute inset-y-0 left-0 w-full md:w-[75%] bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
 
-    <div className="relative container mx-auto px-4 pt-24 pb-40">
+    <div className="relative container mx-auto px-4 pt-28 pb-10 md:pt-24 md:pb-40">
       <div className="mb-6 flex items-center gap-4 animate-fade-up">
         <span className="h-px w-12 bg-[#d9b56d]" />
         <p className="text-xs uppercase tracking-[0.35em]">Designing a Better Tomorrow</p>
@@ -93,7 +61,8 @@ const Hero = () => (
     </div>
 
     {/* Glass stats bar (gol / rounded) */}
-    <div className="absolute bottom-6 md:bottom-8 inset-x-0">
+    {/* Mobile par content ke neeche (normal flow), desktop par hero ke bottom me */}
+    <div className="relative w-full pb-24 md:absolute md:bottom-8 md:inset-x-0 md:pb-0">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-3 divide-x divide-white/20 rounded-[2rem] md:rounded-full border border-white/15 bg-black/30 px-5 py-4 md:px-12 md:py-5 backdrop-blur-md">
           {stats.map((s) => (

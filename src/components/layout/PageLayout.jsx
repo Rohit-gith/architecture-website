@@ -5,7 +5,8 @@ import ScrollToTop from "../common/ScrollToTop";
 import WhatsAppButton from "../common/WhatsAppButton";
 
 const PageLayout = () => {
-  const isHome = useLocation().pathname === "/";
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
   return (
     <>
@@ -13,7 +14,10 @@ const PageLayout = () => {
       <Navbar />
       {/* Home par navbar hero ke upar hai, baaki pages me neeche */}
       <main className={`min-h-screen ${isHome ? "" : "pt-20"}`}>
-        <Outlet />
+        {/* key badalne se har naye page par halka fade-in chalta hai */}
+        <div key={pathname} className="animate-page-in motion-reduce:animate-none">
+          <Outlet />
+        </div>
       </main>
       <Footer />
       <WhatsAppButton />

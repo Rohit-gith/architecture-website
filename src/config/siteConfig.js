@@ -1,9 +1,9 @@
 const siteConfig = {
   name: "ArcStudio",
-  email: "info@example.com",
-  phone: "+91 00000 00000",
-  address: "phulnakhara, odisha, India",
-  social: { instagram: "", linkedin: "www.instagram.com", facebook: "" },
+  email: "", // Asli email yahan daalo. Khaali rahega to site par email nahi dikhega.
+  phone: "+91 63725 69846",
+  address: "Phulnakhara, Cuttack, Odisha, India",
+  social: { instagram: "", linkedin: "", facebook: "" },
 };
 
 export default siteConfig;

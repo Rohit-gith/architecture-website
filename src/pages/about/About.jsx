@@ -2,13 +2,14 @@ import AboutHero from "./AboutHero";
 import CompanyStory from "./CompanyStory";
 import MissionVision from "./MissionVision";
 import Team from "./Team";
+import Reveal from "../../components/common/Reveal";
 
 const About = () => (
   <>
     <AboutHero />
-    <CompanyStory />
+    <Reveal><CompanyStory /></Reveal>
     <MissionVision />
-    <Team />
+    <Reveal><Team /></Reveal>
   </>
 );
 

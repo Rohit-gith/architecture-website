@@ -8,9 +8,9 @@ const ContactInfo = () => {
   const items = [
     { icon: MapPin, label: "Visit Us", value: siteConfig.address },
     { icon: Phone, label: "Call Us", value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/[^+\d]/g, "")}` },
-    { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    siteConfig.email && { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
     { icon: Clock, label: "Working Hours", value: workingHours },
-  ];
+  ].filter(Boolean);
 
   return (
     <div>

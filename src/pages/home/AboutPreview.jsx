@@ -3,6 +3,7 @@ import Container from "../../components/common/Container";
 import SectionTitle from "../../components/common/SectionTitle";
 import ImageBox from "../../components/common/ImageBox";
 import Button from "../../components/common/Button";
+import CountUp from "../../components/common/CountUp";
 
 const stats = [
   { icon: Award, value: "10+", label: "Years of Experience" },
@@ -30,7 +31,7 @@ const AboutPreview = () => (
           <div key={label} className="flex items-center gap-4">
             <Icon size={28} strokeWidth={1.25} className="text-accent shrink-0" />
             <div>
-              <p className="font-heading text-2xl leading-none">{value}</p>
+              <p className="font-heading text-2xl leading-none"><CountUp value={value} /></p>
               <p className="mt-1 text-xs text-neutral-500">{label}</p>
             </div>
           </div>
