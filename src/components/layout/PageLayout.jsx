@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollToTop from "../common/ScrollToTop";
 import WhatsAppButton from "../common/WhatsAppButton";
+import BackToTop from "../common/BackToTop";
 
 const PageLayout = () => {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ const PageLayout = () => {
         </div>
       </main>
       <Footer />
+      <BackToTop />
       <WhatsAppButton />
     </>
   );
