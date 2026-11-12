@@ -6,6 +6,7 @@ import Marquee from "./Marquee";
 import FeaturedProjects from "./FeaturedProjects";
 import WhyChooseUs from "./WhyChooseUs";
 import Testimonials from "./Testimonials";
+import LatestBlog from "./LatestBlog";
 import ContactCTA from "./ContactCTA";
 import Reveal from "../../components/common/Reveal";
 
@@ -19,6 +20,7 @@ const Home = () => (
     <FeaturedProjects />
     <Reveal><WhyChooseUs /></Reveal>
     <Testimonials />
+    <LatestBlog />
     <ContactCTA />
   </>
 );

@@ -8,6 +8,8 @@ import Projects from "../pages/projects/Projects";
 import ProjectDetailsPage from "../pages/projects/ProjectDetailsPage";
 import Services from "../pages/services/Services";
 import Contact from "../pages/contact/Contact";
+import Blog from "../pages/blog/Blog";
+import BlogPost from "../pages/blog/BlogPost";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => (
@@ -20,6 +22,8 @@ const AppRoutes = () => (
       <Route path="/projects" element={<Projects />} />
       <Route path="/projects/:id" element={<ProjectDetailsPage />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
     </Route>

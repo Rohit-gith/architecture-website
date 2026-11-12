@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-9">
+        <ul className="hidden md:flex gap-6 lg:gap-9">
           {navLinks.map((l) =>
             l.children ? (
               <li

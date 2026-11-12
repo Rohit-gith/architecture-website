@@ -10,6 +10,7 @@ const titles = {
   "/team": "Our Team",
   "/services": "Our Services",
   "/projects": "Our Projects",
+  "/blog": "Blog",
   "/contact": "Contact Us",
 };
 
@@ -78,7 +79,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const { pathname } = location;
-    const page = titles[pathname] || (pathname.startsWith("/projects/") ? "Project" : "Page Not Found");
+    const page = titles[pathname] || (pathname.startsWith("/projects/") ? "Project" : pathname.startsWith("/blog/") ? "Blog" : "Page Not Found");
     document.title = `${page} | ${siteConfig.name}`;
   }, [location]);
 
