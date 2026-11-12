@@ -1,15 +1,14 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import SectionTitle from "../../components/common/SectionTitle";
+import SocialLinks from "../../components/common/SocialLinks";
 import siteConfig from "../../config/siteConfig";
-
-const workingHours = "Mon – Sat, 10:00 AM – 6:00 PM";
 
 const ContactInfo = () => {
   const items = [
     { icon: MapPin, label: "Visit Us", value: siteConfig.address },
     { icon: Phone, label: "Call Us", value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/[^+\d]/g, "")}` },
     siteConfig.email && { icon: Mail, label: "Email Us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-    { icon: Clock, label: "Working Hours", value: workingHours },
+    { icon: Clock, label: "Working Hours", value: siteConfig.hours },
   ].filter(Boolean);
 
   return (
@@ -36,6 +35,11 @@ const ContactInfo = () => {
           </li>
         ))}
       </ul>
+
+      <div className="mt-10 border-t border-neutral-200 pt-8">
+        <p className="mb-4 text-[11px] uppercase tracking-[0.25em] text-neutral-500">Follow Us</p>
+        <SocialLinks />
+      </div>
     </div>
   );
 };
