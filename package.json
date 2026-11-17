@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "optimize": "node scripts/optimize-images.mjs",
     "predev": "node scripts/optimize-images.mjs",
-    "prebuild": "node scripts/optimize-images.mjs"
+    "prebuild": "node scripts/optimize-images.mjs",
+    "postbuild": "node scripts/seo-build.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

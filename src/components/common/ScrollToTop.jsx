@@ -1,17 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
-import siteConfig from "../../config/siteConfig";
-
-// Har page ka browser tab title
-const titles = {
-  "/": siteConfig.tagline,
-  "/about": "About Us",
-  ...(siteConfig.showTeam ? { "/leadership": "Leadership", "/team": "Our Team" } : {}),
-  "/services": "Our Services",
-  "/projects": "Our Projects",
-  "/blog": "Blog",
-  "/contact": "Contact Us",
-};
+// (Page title aur SEO tags ab src/components/common/Seo.jsx sambhalta hai)
 
 // Scroll ka niyam:
 // - Link click karke naye page par jao -> page upar se khulta hai.
@@ -76,11 +65,6 @@ const ScrollToTop = () => {
     return undefined;
   }, [location.key, navType]);
 
-  useEffect(() => {
-    const { pathname } = location;
-    const page = titles[pathname] || (pathname.startsWith("/projects/") ? "Project" : pathname.startsWith("/blog/") ? "Blog" : "Page Not Found");
-    document.title = `${page} | ${siteConfig.name}`;
-  }, [location]);
 
   return null;
 };

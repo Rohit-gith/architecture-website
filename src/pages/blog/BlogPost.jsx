@@ -9,7 +9,6 @@ import WhatsAppIcon from "../../components/common/WhatsAppIcon";
 import BlogCard from "../../components/ui/BlogCard";
 import ContactCTA from "../home/ContactCTA";
 import blog, { formatDate } from "../../data/blog";
-import siteConfig from "../../config/siteConfig";
 
 // Article ke andar ke blocks (paragraph, heading, list, quote)
 const renderBlock = (b, i) => {
@@ -44,7 +43,6 @@ const BlogPost = () => {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    if (post) document.title = `${post.title} | ${siteConfig.name}`;
     setCopied(false);
   }, [post]);
 

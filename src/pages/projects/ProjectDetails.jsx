@@ -8,7 +8,6 @@ import Button from "../../components/common/Button";
 import Lightbox from "../../components/common/Lightbox";
 import ProjectCard from "../../components/ui/ProjectCard";
 import projects from "../../data/projects";
-import siteConfig from "../../config/siteConfig";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -19,10 +18,6 @@ const ProjectDetails = () => {
   // Dusre project par jaate hi lightbox band
   useEffect(() => setPhoto(null), [id]);
 
-  // Browser tab me project ka naam
-  useEffect(() => {
-    if (project) document.title = `${project.title} | ${siteConfig.name}`;
-  }, [project]);
 
   if (!project) {
     return (
