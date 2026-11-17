@@ -13,6 +13,8 @@ export default {
         ink: "#111111",
         accent: "#a6803f",
         cream: "#f5f4f1",
+        // Urban Crafting brand green (office profile PDF)
+        forest: { DEFAULT: "#2f4a24", dark: "#1f3119" },
       },
       fontFamily: {
         heading: ['"Playfair Display"', "serif"],

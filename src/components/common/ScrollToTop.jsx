@@ -4,10 +4,9 @@ import siteConfig from "../../config/siteConfig";
 
 // Har page ka browser tab title
 const titles = {
-  "/": "Architecture & Design",
+  "/": siteConfig.tagline,
   "/about": "About Us",
-  "/leadership": "Leadership",
-  "/team": "Our Team",
+  ...(siteConfig.showTeam ? { "/leadership": "Leadership", "/team": "Our Team" } : {}),
   "/services": "Our Services",
   "/projects": "Our Projects",
   "/blog": "Blog",

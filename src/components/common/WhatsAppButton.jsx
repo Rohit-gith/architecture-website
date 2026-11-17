@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Building2, X } from "lucide-react";
+import { X } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import siteConfig from "../../config/siteConfig";
 import { whatsappLink } from "../../config/whatsapp";
@@ -63,13 +63,13 @@ const WhatsAppButton = () => {
             </button>
 
             <div className="flex items-center gap-3">
-              <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-accent">
-                <Building2 size={20} strokeWidth={1.4} />
+              <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest">
+                <img src="/images/logo/urban-crafting-light.webp" alt="" aria-hidden="true" className="h-6 w-auto" />
                 <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-white bg-[#25D366]" />
               </span>
               <span>
                 <span className="block text-sm font-semibold">{siteConfig.name}</span>
-                <span className="block text-[11px] text-[#1da851]">Online</span>
+                <span className="block text-[11px] text-neutral-500">{siteConfig.tagline}</span>
               </span>
             </div>
 

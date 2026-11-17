@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
 import navLinks from "../../data/navLinks";
 import services from "../../data/services";
 import siteConfig from "../../config/siteConfig";
@@ -22,25 +22,26 @@ const Footer = () => {
     { icon: MapPin, value: siteConfig.address },
     siteConfig.phone && { icon: Phone, value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/[^+\d]/g, "")}` },
     siteConfig.email && { icon: Mail, value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    siteConfig.website && { icon: Globe, value: siteConfig.website.replace(/^https?:\/\//, ""), href: siteConfig.website },
     siteConfig.hours && { icon: Clock, value: siteConfig.hours },
   ].filter(Boolean);
 
   return (
-    <footer className="bg-ink text-neutral-300">
+    <footer className="bg-forest-dark text-neutral-300">
       <div className="container mx-auto grid gap-10 px-4 py-14 sm:grid-cols-2 md:py-16 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:gap-12">
         {/* Brand + social */}
         <div>
           <Link to="/" className="inline-flex items-center gap-3">
-            <Building2 size={32} strokeWidth={1.25} className="text-accent" />
+            <img src="/images/logo/urban-crafting-light.webp" alt="" aria-hidden="true" width="40" height="56" className="h-14 w-auto" />
             <span className="leading-tight">
-              <span className="block text-lg font-medium uppercase tracking-[0.2em] text-white">{siteConfig.name}</span>
-              <span className="block text-[9px] uppercase tracking-[0.25em] text-accent">Architecture &amp; Design</span>
+              <span className="block text-lg font-semibold uppercase tracking-[0.18em] text-white">{siteConfig.name}</span>
+              <span className="block text-[9px] uppercase tracking-[0.22em] text-[#d9b56d]">{siteConfig.tagline}</span>
             </span>
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed">
-            We design spaces that are functional, timeless and rooted in their context.
+            Crafting luxury, defining spaces. Luxury architecture and refined interiors from Bhubaneswar, Odisha.
           </p>
-          <p className="mb-4 mt-7 text-[11px] uppercase tracking-[0.25em] text-neutral-500">Follow Us</p>
+          <p className="mb-4 mt-7 text-[11px] uppercase tracking-[0.25em] text-neutral-400">Follow Us</p>
           <SocialLinks dark />
         </div>
 
@@ -75,7 +76,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-neutral-800 py-6 text-xs text-neutral-500">
+      <div className="border-t border-white/10 py-6 text-xs text-neutral-400">
         <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 text-center md:flex-row">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1">

@@ -45,7 +45,7 @@ const links = [
 // dark = footer (kaala background), warna light background (Contact page).
 const SocialLinks = ({ dark = false, className = "" }) => {
   const base = `flex h-10 w-10 items-center justify-center rounded-full border transition duration-300 ${
-    dark ? "border-neutral-700 text-neutral-300" : "border-neutral-300 text-neutral-600"
+    dark ? "border-white/20 text-neutral-200" : "border-neutral-300 text-neutral-600"
   }`;
 
   return (

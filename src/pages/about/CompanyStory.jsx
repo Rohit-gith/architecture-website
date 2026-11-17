@@ -3,37 +3,45 @@ import SectionTitle from "../../components/common/SectionTitle";
 import ImageBox from "../../components/common/ImageBox";
 import CountUp from "../../components/common/CountUp";
 
+// Text client ke office profile PDF ke "About Us" se. Numbers PDF ke projects se gine gaye hain.
 const stats = [
-  { value: "10+", label: "Years of Experience" },
-  { value: "250+", label: "Projects Completed" },
-  { value: "15+", label: "Cities Served" },
-  { value: "12+", label: "Awards" },
+  { value: "25+", label: "Projects Designed" },
+  { value: "126", label: "Housing Plots Planned" },
+  { value: "7+", label: "Acres Master-Planned" },
+  { value: "6400+", label: "Sq.ft. of Interiors" },
 ];
 
 const CompanyStory = () => (
   <section className="py-20 md:py-28">
     <Container>
-      <div className="grid gap-12 md:grid-cols-2 items-center">
+      <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
-          <SectionTitle align="left" title="Our Story" />
-          <p className="text-neutral-600 leading-relaxed">
-            Started as a small studio with a simple idea: design should serve people. Over the years
-            we have grown into a full-service practice, but the approach remains the same. Listen
-            carefully, design thoughtfully and build with care.
-          </p>
-          <p className="mt-4 text-neutral-600 leading-relaxed">
-            From private homes and interiors to commercial buildings and landscapes, every project
-            starts with understanding the site, the budget and the people who will use the space.
-            We stay involved from the first sketch to the final handover.
-          </p>
+          <SectionTitle align="left" eyebrow="Who We Are" title="Crafting Luxury, Defining Spaces" />
+          <div className="space-y-4 leading-relaxed text-neutral-600">
+            <p>
+              Urban Crafting is a forward-thinking design studio specializing in <strong className="font-semibold text-ink">luxury
+              architecture and refined interior environments</strong>. We craft spaces that seamlessly blend modern
+              aesthetics, functionality and timeless elegance.
+            </p>
+            <p>
+              Based in Bhubaneswar, we bring a contextual design approach that respects local climate, culture, and
+              lifestyle while delivering globally inspired solutions.
+            </p>
+            <p>
+              Our work reflects a balance of innovation, precision, and premium detailing, ensuring every project
+              stands out with a unique identity.
+            </p>
+          </div>
         </div>
-        <div className="aspect-[4/3]"><ImageBox src="/images/about/our-story.png" alt="Our story" /></div>
+        <div className="aspect-[4/3]">
+          <ImageBox src="/images/about/our-story.webp" alt="Aerial view of a villa and landscaped garden designed by Urban Crafting" />
+        </div>
       </div>
-      <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="mt-20 grid grid-cols-2 gap-8 text-center md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label}>
-            <p className="font-heading text-4xl md:text-5xl text-accent"><CountUp value={s.value} /></p>
-            <p className="mt-2 text-sm uppercase tracking-widest text-neutral-500">{s.label}</p>
+            <p className="font-heading text-4xl text-accent md:text-5xl"><CountUp value={s.value} /></p>
+            <p className="mt-2 text-xs uppercase tracking-widest text-neutral-500 sm:text-sm">{s.label}</p>
           </div>
         ))}
       </div>

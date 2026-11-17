@@ -18,7 +18,7 @@ const ServicesList = () => (
               <div className="aspect-[4/3] overflow-hidden">
                 <ImageBox src={s.image} alt={s.title} className="transition duration-700 hover:scale-105" />
               </div>
-              <span className={`absolute -bottom-6 hidden h-24 w-24 items-center justify-center bg-accent text-white shadow-xl md:flex ${flip ? "-left-6" : "-right-6"}`}>
+              <span className={`absolute -bottom-6 hidden h-24 w-24 items-center justify-center bg-accent text-white shadow-xl lg:flex ${flip ? "-left-6" : "-right-6"}`}>
                 <Icon size={36} strokeWidth={1.25} />
               </span>
             </Reveal>

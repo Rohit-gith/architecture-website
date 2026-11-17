@@ -10,8 +10,8 @@ const blog = [
     category: "Residential",
     date: "2026-10-28",
     readTime: "6 min read",
-    author: "ArcStudio Design Team",
-    image: "/images/projects/luxury-villa.webp",
+    author: "Urban Crafting Design Team",
+    image: "/images/projects/residential-facades/2.webp",
     excerpt:
       "A clear brief saves months of revisions. Here are the decisions that make your first meeting with an architect productive.",
     content: [
@@ -39,8 +39,8 @@ const blog = [
     category: "Sustainability",
     date: "2026-10-14",
     readTime: "5 min read",
-    author: "ArcStudio Design Team",
-    image: "/images/projects/sustainable-home.webp",
+    author: "Urban Crafting Design Team",
+    image: "/images/about/our-story.webp",
     excerpt:
       "Simple design choices like orientation, shading and cross-ventilation can keep homes cooler and cut electricity bills.",
     content: [
@@ -62,8 +62,8 @@ const blog = [
     category: "Interior",
     date: "2026-09-30",
     readTime: "4 min read",
-    author: "ArcStudio Design Team",
-    image: "/images/projects/residential-interior.webp",
+    author: "Urban Crafting Design Team",
+    image: "/images/projects/raghunathpur-apartment-interior/4.webp",
     excerpt:
       "Skip short-lived fads. These materials and ideas age well and keep a home feeling fresh for years.",
     content: [
@@ -84,8 +84,8 @@ const blog = [
     category: "Commercial",
     date: "2026-09-12",
     readTime: "5 min read",
-    author: "ArcStudio Design Team",
-    image: "/images/projects/work-hub.webp",
+    author: "Urban Crafting Design Team",
+    image: "/images/projects/bypass-road-commercial/1.webp",
     excerpt:
       "Natural light, flexible zones and good acoustics make offices more productive. Here is how we approach them.",
     content: [

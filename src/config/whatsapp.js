@@ -1,8 +1,8 @@
 // WhatsApp number: country code ke saath, bina + aur bina space (91 = India)
 const whatsapp = {
-  number: "916372569846",
-  displayNumber: "+91 6372569846",
-  message: "Hello, I would like to discuss a project with you.",
+  number: "919599866947",
+  displayNumber: "+91 95998 66947",
+  message: "Hello Urban Crafting, I would like to discuss a project with you.",
 };
 
 // Kisi bhi text ke saath WhatsApp chat ka link banata hai
@@ -12,7 +12,3 @@ export const buildWhatsappLink = (text) => `https://wa.me/${whatsapp.number}?tex
 export const whatsappLink = buildWhatsappLink(whatsapp.message);
 
 export default whatsapp;
-
-
-
-

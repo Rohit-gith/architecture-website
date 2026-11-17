@@ -27,5 +27,4 @@ const Leadership = () => (
     </section>
   </>
 );
-
 export default Leadership;

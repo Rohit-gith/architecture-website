@@ -11,14 +11,16 @@ import Contact from "../pages/contact/Contact";
 import Blog from "../pages/blog/Blog";
 import BlogPost from "../pages/blog/BlogPost";
 import NotFound from "../pages/NotFound";
+import siteConfig from "../config/siteConfig";
 
 const AppRoutes = () => (
   <Routes>
     <Route element={<PageLayout />}>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/team" element={<TeamPage />} />
-      <Route path="/leadership" element={<Leadership />} />
+      {/* Team ki asli jaankari aane tak ye pages band (siteConfig.showTeam) */}
+      {siteConfig.showTeam && <Route path="/team" element={<TeamPage />} />}
+      {siteConfig.showTeam && <Route path="/leadership" element={<Leadership />} />}
       <Route path="/projects" element={<Projects />} />
       <Route path="/projects/:id" element={<ProjectDetailsPage />} />
       <Route path="/services" element={<Services />} />

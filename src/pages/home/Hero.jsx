@@ -1,11 +1,13 @@
 import Button from "../../components/common/Button";
 import CountUp from "../../components/common/CountUp";
+import siteConfig from "../../config/siteConfig";
 
 // Video: public/videos/hero.mp4. Poster (video load hone tak dikhne wali image): public/images/hero/hero-poster.webp
+// Numbers client ke office profile PDF se gine gaye hain (projects, plots 53 + 73, acres 3.448 + 3.6)
 const stats = [
-  { value: "10+", label: "Years of Experience" },
-  { value: "250+", label: "Projects Completed" },
-  { value: "15+", label: "Cities Served" },
+  { value: "25+", label: "Projects Designed" },
+  { value: "126", label: "Housing Plots Planned" },
+  { value: "7+", label: "Acres Master-Planned" },
 ];
 
 const Hero = () => (
@@ -29,21 +31,21 @@ const Hero = () => (
     <div className="relative container mx-auto px-4 pt-28 pb-10 md:pt-24 md:pb-40">
       <div className="mb-6 flex items-center gap-4 animate-fade-up">
         <span className="h-px w-12 bg-[#d9b56d]" />
-        <p className="text-xs uppercase tracking-[0.35em]">Designing a Better Tomorrow</p>
+        <p className="text-xs uppercase tracking-[0.35em]">{siteConfig.tagline}</p>
       </div>
 
       <h1
         className="max-w-xl text-5xl md:text-7xl font-medium leading-[1.05] drop-shadow-lg animate-fade-up"
         style={{ animationDelay: "150ms" }}
       >
-        Spaces That <span className="italic text-[#d9b56d]">Inspire</span> Life
+        Crafting <span className="italic text-[#d9b56d]">Luxury</span>, Defining Spaces
       </h1>
 
       <p
         className="mt-6 max-w-md text-neutral-100 leading-relaxed drop-shadow animate-fade-up"
         style={{ animationDelay: "300ms" }}
       >
-        We create innovative, sustainable and timeless architectural spaces that enhance the way you live, work and connect.
+        A Bhubaneswar-based design studio crafting luxury architecture and refined interiors that blend modern aesthetics, functionality and timeless elegance.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "450ms" }}>

@@ -63,9 +63,12 @@ const ProjectDetails = () => {
   const meta = [
     ["Category", project.category],
     ["Location", project.location],
-    ["Year", project.year],
+    ["Status", project.status],
     ["Area", project.area],
-  ];
+    ["Plots", project.plots],
+    ["Style", project.style],
+    ["Project Cost", project.cost],
+  ].filter(([, v]) => v); // jo jaankari na ho wo nahi dikhti
 
   return (
     <>
@@ -83,7 +86,7 @@ const ProjectDetails = () => {
           <h1 className="text-4xl font-semibold md:text-6xl">{project.title}</h1>
           <p className="mt-4 max-w-2xl text-neutral-600">{project.description}</p>
 
-          <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-accent/30 pt-6 md:grid-cols-4">
+          <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-accent/30 pt-6 sm:flex sm:flex-wrap sm:gap-x-14">
             {meta.map(([k, v]) => (
               <div key={k}>
                 <dt className="text-[11px] uppercase tracking-[0.25em] text-neutral-500">{k}</dt>
@@ -96,32 +99,28 @@ const ProjectDetails = () => {
 
       {/* Main image */}
       <Container className="-mt-px pt-10 md:pt-14">
-        <Reveal className="aspect-[16/9] overflow-hidden">
+        {/* Photo poori dikhti hai (portrait ho ya landscape); peeche usi photo ka blur background */}
+        <Reveal className="relative aspect-[4/3] overflow-hidden bg-neutral-900 md:aspect-[16/9]">
+          <img src={project.image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-2xl" />
           {zoomable(
             0,
-            <ImageBox src={project.image} alt={project.title} className="transition duration-700 group-hover:scale-[1.02]" />
+            <ImageBox src={project.image} alt={project.title} fit="contain" className="relative transition duration-700 group-hover:scale-[1.02]" />
           )}
         </Reveal>
       </Container>
 
       {/* Challenge / Solution / Highlights */}
-      {(project.challenge || project.solution || project.highlights?.length) && (
+      {(project.overview?.length > 0 || project.highlights?.length > 0) && (
         <section className="py-16 md:py-24">
-          <Container className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
-            <div className="space-y-10">
-              {project.challenge && (
-                <Reveal>
-                  <p className="mb-3 text-[11px] uppercase tracking-[0.3em] text-accent">The Challenge</p>
-                  <p className="text-lg leading-relaxed text-neutral-700">{project.challenge}</p>
-                </Reveal>
-              )}
-              {project.solution && (
-                <Reveal>
-                  <p className="mb-3 text-[11px] uppercase tracking-[0.3em] text-accent">Our Solution</p>
-                  <p className="text-lg leading-relaxed text-neutral-700">{project.solution}</p>
-                </Reveal>
-              )}
-            </div>
+          <Container className={`grid gap-12 ${project.highlights?.length ? "lg:grid-cols-[1.4fr_1fr]" : "max-w-4xl"}`}>
+            {project.overview?.length > 0 && (
+              <Reveal>
+                <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-accent">Project Overview</p>
+                <div className="space-y-5 text-lg leading-relaxed text-neutral-700">
+                  {project.overview.map((para) => <p key={para}>{para}</p>)}
+                </div>
+              </Reveal>
+            )}
             {project.highlights?.length > 0 && (
               <Reveal>
                 <div className="border-t-2 border-accent bg-cream p-8">

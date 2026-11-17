@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Building2, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import navLinks from "../../data/navLinks";
 import siteConfig from "../../config/siteConfig";
 import Button from "../common/Button";
@@ -33,16 +33,24 @@ const Navbar = () => {
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${solid ? "bg-white text-ink" : "bg-transparent text-white"} ${scrolled ? "shadow-md" : solid ? "shadow-sm" : ""}`}>
       {/* Scroll karne par navbar patla ho jata hai (80px -> 64px) */}
       <nav className={`container mx-auto px-4 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
-        <Link to="/" className="flex items-center gap-3">
-          <Building2 size={34} strokeWidth={1.25} className={`text-accent transition-transform duration-300 ${scrolled ? "scale-90" : ""}`} />
-          <span className="leading-tight">
-            <span className="block font-body text-lg font-medium uppercase tracking-[0.2em]">{siteConfig.name}</span>
-            <span className="block text-[9px] uppercase tracking-[0.25em] text-accent">Architecture &amp; Design</span>
+        <Link to="/" className="flex items-center gap-3 sm:gap-3.5" aria-label={`${siteConfig.name} home`}>
+          {/* Safed navbar par dark logo, video ke upar (transparent navbar) light logo */}
+          <img
+            src={solid ? "/images/logo/urban-crafting-dark.webp" : "/images/logo/urban-crafting-light.webp"}
+            alt=""
+            aria-hidden="true"
+            width="33"
+            height="46"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-11 sm:h-12" : "h-12 sm:h-[60px]"}`}
+          />
+          <span className="whitespace-nowrap leading-tight">
+            <span className="block font-body text-[17px] font-semibold uppercase tracking-[0.16em] sm:text-lg lg:text-xl">{siteConfig.name}</span>
+            <span className={`block mt-0.5 text-[8.5px] uppercase tracking-[0.2em] lg:text-[10px] ${solid ? "text-accent" : "text-[#d9b56d]"}`}>{siteConfig.tagline}</span>
           </span>
         </Link>
 
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-6 lg:gap-9">
+        <ul className="hidden md:flex gap-5 lg:gap-9">
           {navLinks.map((l) =>
             l.children ? (
               <li
@@ -98,7 +106,7 @@ const Navbar = () => {
           )}
         </ul>
 
-        <div className="hidden md:block"><Button to="/contact" arrow>Get a Quote</Button></div>
+        <div className="hidden lg:block"><Button to="/contact" arrow>Get a Quote</Button></div>
 
         <button className="md:hidden p-2" aria-label="Toggle menu" onClick={() => setOpen(!open)}>
           {[0, 1, 2].map((i) => <span key={i} className={`block w-6 h-0.5 mb-1.5 last:mb-0 ${solid ? "bg-ink" : "bg-white"}`} />)}

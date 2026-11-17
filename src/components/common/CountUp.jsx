@@ -8,9 +8,21 @@ const CountUp = ({ value, duration = 2000 }) => {
   const suffix = String(value).replace(/[0-9]/g, "");
   const [ref, visible] = useScrollAnimation({ threshold: 0.4 });
   const [current, setCurrent] = useState(0);
+  // Pehli visit ka intro chal raha ho to ginti uske khatam hone tak ruki rahe
+  const [introDone, setIntroDone] = useState(() => !document.documentElement.classList.contains("intro-active"));
 
   useEffect(() => {
-    if (!visible) return undefined;
+    if (introDone) return undefined;
+    const root = document.documentElement;
+    const obs = new MutationObserver(() => {
+      if (!root.classList.contains("intro-active")) setIntroDone(true);
+    });
+    obs.observe(root, { attributes: true, attributeFilter: ["class"] });
+    return () => obs.disconnect();
+  }, [introDone]);
+
+  useEffect(() => {
+    if (!visible || !introDone) return undefined;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setCurrent(end);
       return undefined;
@@ -25,7 +37,7 @@ const CountUp = ({ value, duration = 2000 }) => {
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [visible, end, duration]);
+  }, [visible, introDone, end, duration]);
 
   // Invisible final number pehle se jagah gher leta hai, isliye chadhte waqt layout hilta nahi
   return (

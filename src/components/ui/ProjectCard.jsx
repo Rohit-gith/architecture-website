@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => (
     <div className="mt-4 flex items-start justify-between gap-4">
       <div>
         <h3 className="font-body text-base font-semibold transition group-hover:text-accent">{project.title}</h3>
-        <p className="mt-0.5 text-xs text-neutral-500">{project.location} · {project.year}</p>
+        <p className="mt-0.5 text-xs text-neutral-500">{[project.location, project.status].filter(Boolean).join(" · ")}</p>
       </div>
       <ArrowRight size={16} className="mt-1 shrink-0 transition group-hover:translate-x-1 group-hover:text-accent" />
     </div>

@@ -14,7 +14,7 @@ const Tile = ({ project, big = false }) => (
       <div>
         <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-[#d9b56d]">{project.category}</p>
         <h3 className={`font-heading font-medium ${big ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"}`}>{project.title}</h3>
-        <p className="mt-1 text-xs text-neutral-300">{project.location} · {project.year}</p>
+        <p className="mt-1 text-xs text-neutral-300">{[project.location, project.status].filter(Boolean).join(" · ")}</p>
       </div>
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/50 transition duration-500 group-hover:rotate-45 group-hover:border-[#d9b56d] group-hover:bg-[#d9b56d]">
         <ArrowUpRight size={18} />

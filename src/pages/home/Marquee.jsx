@@ -1,5 +1,5 @@
 // Chalti hui text patti. Words badalne ho to yahan badlo.
-const words = ["Architecture", "Interiors", "Landscape", "Planning", "3D Visualization", "Sustainable Design"];
+const words = ["Luxury Architecture", "Refined Interiors", "Vastu Planning", "3D Visualization", "Modular Kitchens", "Master Planning"];
 
 const Row = ({ hidden = false }) => (
   <div className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>

@@ -10,9 +10,9 @@ const ServicesPreview = () => (
       <SectionTitle
         eyebrow="Our Services"
         title="From Vision to Reality"
-        subtitle="We offer end-to-end architectural and design solutions tailored to your needs."
+        subtitle="Architecture, interiors, planning and visualization, all under one roof."
       />
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:divide-x divide-neutral-300/60">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:divide-x divide-neutral-300/60">
         {services.map(({ id, title, icon: Icon }, i) => (
           <Reveal key={id} delay={i * 80}>
           <Link to="/services" className="group flex flex-col items-center px-4 py-6 text-center">

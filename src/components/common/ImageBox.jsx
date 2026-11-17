@@ -4,7 +4,7 @@ import { useState } from "react";
 // (npm run optimize sab images ko .webp bana deta hai). Image na mile to grey placeholder dikhta hai.
 export const toWebp = (src) => (src ? src.replace(/\.(jpe?g|png)$/i, ".webp") : src);
 
-const ImageBox = ({ src, alt = "", className = "" }) => {
+const ImageBox = ({ src, alt = "", className = "", fit = "cover" }) => {
   const [failed, setFailed] = useState(false);
   const finalSrc = toWebp(src);
 
@@ -15,7 +15,7 @@ const ImageBox = ({ src, alt = "", className = "" }) => {
       loading="lazy"
       decoding="async"
       onError={() => setFailed(true)}
-      className={`w-full h-full object-cover ${className}`}
+      className={`w-full h-full ${fit === "contain" ? "object-contain" : "object-cover"} ${className}`}
     />
   ) : (
     <div className={`w-full h-full bg-neutral-200 flex items-center justify-center text-neutral-400 text-xs uppercase tracking-widest ${className}`}>

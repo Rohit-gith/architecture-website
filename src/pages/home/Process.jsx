@@ -1,14 +1,14 @@
-import { MessagesSquare, PencilRuler, Box, HardHat, KeyRound } from "lucide-react";
+import { MessagesSquare, Compass, PencilRuler, Box, FileCheck2 } from "lucide-react";
 import Container from "../../components/common/Container";
 import SectionTitle from "../../components/common/SectionTitle";
 import Reveal from "../../components/common/Reveal";
 
 const steps = [
-  { icon: MessagesSquare, title: "Consultation", text: "We listen to your needs, budget and timeline, and visit the site." },
-  { icon: PencilRuler, title: "Concept", text: "Initial sketches and layout options that set the design direction." },
-  { icon: Box, title: "Design & 3D", text: "Detailed drawings, materials and 3D views so you see it before it is built." },
-  { icon: HardHat, title: "Construction", text: "Site supervision and vendor coordination to keep quality on track." },
-  { icon: KeyRound, title: "Handover", text: "Final checks, snag fixing and a space ready for you to move in." },
+  { icon: MessagesSquare, title: "Consultation", text: "We understand your needs, lifestyle, budget and site." },
+  { icon: Compass, title: "Planning", text: "Vastu-compliant layouts that make the most of every space." },
+  { icon: PencilRuler, title: "Design", text: "A customized design language with 2D drawings and details." },
+  { icon: Box, title: "Visualization", text: "Photorealistic 3D renders and walkthroughs before you build." },
+  { icon: FileCheck2, title: "Detailing", text: "Precise drawings and premium detailing ready for execution." },
 ];
 
 const Process = () => (
@@ -18,7 +18,7 @@ const Process = () => (
         <SectionTitle
           eyebrow="How We Work"
           title="A Clear Process, Start to Finish"
-          subtitle="Five simple steps that take your project from first idea to final handover."
+          subtitle="Five simple steps that take your project from first idea to a design ready to build."
         />
       </Reveal>
 

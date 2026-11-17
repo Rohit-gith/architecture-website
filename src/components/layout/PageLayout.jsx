@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import ScrollToTop from "../common/ScrollToTop";
 import WhatsAppButton from "../common/WhatsAppButton";
 import BackToTop from "../common/BackToTop";
+import IntroSplash from "../common/IntroSplash";
 
 const PageLayout = () => {
   const { pathname } = useLocation();
@@ -11,6 +12,7 @@ const PageLayout = () => {
 
   return (
     <>
+      <IntroSplash />
       <ScrollToTop />
       <Navbar />
       {/* Home par navbar hero ke upar hai, baaki pages me neeche */}

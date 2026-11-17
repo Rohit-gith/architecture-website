@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import Button from "../../components/common/Button";
 import { buildWhatsappLink } from "../../config/whatsapp";
 
-const projectTypes = ["Residential", "Commercial", "Interior Design", "Landscape", "Other"];
+const projectTypes = ["Villa / Residence", "Apartment / Group Housing", "Plotted Housing", "Commercial / Hotel", "Interior Design", "Planning & Vastu Consultancy", "3D Visualization", "Other"];
 const initial = { name: "", email: "", phone: "", type: "", message: "" };
 
 // 3D glass card: bade gol kinare, upar halki chamak, neeche andar ki shadow, gehri bahari shadow
