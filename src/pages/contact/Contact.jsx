@@ -3,12 +3,15 @@ import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
 import ContactMap from "./ContactMap";
 import Container from "../../components/common/Container";
+import BlueprintDoodles from "../../components/common/BlueprintDoodles";
 
 const Contact = () => (
   <>
     <ContactHero />
-    <section className="bg-cream py-16 md:py-24">
-      <Container className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+    <section className="relative overflow-hidden bg-cream py-16 md:py-24">
+      {/* Peeche halki blueprint lines (architect ke auzaar, plan, elevation) */}
+      <BlueprintDoodles />
+      <Container className="relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         <ContactInfo />
         <ContactForm />
       </Container>

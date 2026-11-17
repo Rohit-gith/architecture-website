@@ -194,3 +194,34 @@ html.intro-active .animate-fade-up {
   .intro-splash *,
   .intro-glow { animation: none !important; }
 }
+
+/* ---------- Blueprint line-art (src/components/common/BlueprintDoodles.jsx) ---------- */
+/* Halki gold lines: pehle "draw" hoti hain, phir dheere tairti hain */
+.bp-doodle {
+  color: #a6803f;
+  opacity: 0.28;
+  transform: rotate(var(--rot));
+  animation: bp-float var(--float) ease-in-out infinite alternate;
+}
+.bp-doodle path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.bp-doodle.bp-visible path {
+  animation: bp-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) var(--delay) forwards;
+}
+@keyframes bp-float {
+  from { transform: translateY(0) rotate(var(--rot)); }
+  to { transform: translateY(-12px) rotate(calc(var(--rot) + 3deg)); }
+}
+@keyframes bp-draw {
+  to { stroke-dashoffset: 0; }
+}
+@media (max-width: 767px) {
+  .bp-doodle { opacity: 0.2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bp-doodle { animation: none; }
+  .bp-doodle path { stroke-dashoffset: 0; }
+  .bp-doodle.bp-visible path { animation: none; }
+}

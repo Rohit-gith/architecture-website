@@ -6,6 +6,10 @@ const siteConfig = {
   email: "info@urbancrafting.in",
   phone: "+91 95998 66947",
   address: "Bhubaneswar, Odisha, India",
+  // Contact page ka map. PDF me office ka poora pata nahi hai, isliye abhi map sirf Bhubaneswar shehar dikhata hai.
+  // Office ka exact pata milte hi yahan likho, jaise "Urban Crafting, Plot 123, Patia, Bhubaneswar, Odisha 751024".
+  // Google Maps par dukaan ka naam (business listing) ho to sirf "Urban Crafting Bhubaneswar" likhna bhi kaafi hai.
+  mapQuery: "Bhubaneswar, Odisha, India",
   website: "https://www.urbancrafting.in",
   hours: "Mon – Sat, 10:00 AM – 6:00 PM",
   // Leadership / Team pages: client ne abhi team ki jaankari nahi di, isliye band hain.
