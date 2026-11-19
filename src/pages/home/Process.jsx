@@ -12,7 +12,7 @@ const steps = [
 ];
 
 const Process = () => (
-  <section className="py-16 md:py-24">
+  <section className="py-12 md:py-20">
     <Container>
       <Reveal>
         <SectionTitle
@@ -22,11 +22,11 @@ const Process = () => (
         />
       </Reveal>
 
-      <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+      <div className="relative grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-5 lg:gap-6">
         {/* Desktop par steps ko jodne wali line */}
         <span className="absolute left-[10%] right-[10%] top-8 hidden h-px bg-accent/30 lg:block" aria-hidden="true" />
         {steps.map(({ icon: Icon, title, text }, i) => (
-          <Reveal key={title} delay={i * 120}>
+          <Reveal key={title} delay={i * 120} className={i === steps.length - 1 ? "col-span-2 lg:col-span-1" : ""}>
             <div className="relative flex flex-col items-center text-center">
               <span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-accent/40 bg-white text-accent">
                 <Icon size={26} strokeWidth={1.25} />
@@ -34,8 +34,8 @@ const Process = () => (
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </span>
-              <h3 className="mt-5 text-lg font-medium">{title}</h3>
-              <p className="mt-2 max-w-[16rem] text-sm leading-relaxed text-neutral-500">{text}</p>
+              <h3 className="mt-4 text-base font-medium sm:mt-5 sm:text-lg">{title}</h3>
+              <p className="mt-1.5 max-w-[16rem] text-[13px] leading-relaxed text-neutral-500 sm:mt-2 sm:text-sm">{text}</p>
             </div>
           </Reveal>
         ))}

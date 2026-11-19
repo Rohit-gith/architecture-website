@@ -15,9 +15,9 @@ const WhyChooseUs = () => (
     <div className="min-h-[300px] sm:min-h-[420px]">
       <ImageBox src="/images/home/philosophy.webp" alt="Interior with arched shelving by Urban Crafting" />
     </div>
-    <div className="flex flex-col justify-center bg-cream px-6 py-14 md:px-16">
+    <div className="flex flex-col justify-center bg-cream px-6 py-12 md:px-16">
       <SectionTitle align="left" eyebrow="Design Philosophy" title="Design Is How It Feels" />
-      <blockquote className="-mt-6 mb-6 border-l-2 border-accent pl-5 font-heading text-xl italic leading-relaxed text-neutral-700">
+      <blockquote className="-mt-4 mb-6 border-l-2 border-accent pl-5 font-heading text-xl italic leading-relaxed text-neutral-700">
         &ldquo;Design is not just what it looks like, but how it feels.&rdquo;
       </blockquote>
       <p className="mb-8 leading-relaxed text-neutral-600">

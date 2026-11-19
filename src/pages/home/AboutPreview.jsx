@@ -105,11 +105,11 @@ const AboutCollage = () => {
 };
 
 const AboutPreview = () => (
-  <section className="py-16 md:py-20">
+  <section className="py-12 md:py-20">
     <Container className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr_0.6fr] lg:gap-12">
       <div>
         <SectionTitle align="left" eyebrow="About Us" title="Luxury Architecture, Refined Interiors" />
-        <p className="-mt-6 mb-4 leading-relaxed text-neutral-600">
+        <p className="-mt-4 mb-4 leading-relaxed text-neutral-600">
           Urban Crafting is a forward-thinking design studio specializing in luxury architecture and refined
           interior environments. We craft spaces that seamlessly blend modern aesthetics, functionality and
           timeless elegance.

@@ -8,10 +8,10 @@ import BlueprintDoodles from "../../components/common/BlueprintDoodles";
 const Contact = () => (
   <>
     <ContactHero />
-    <section className="relative overflow-hidden bg-cream py-16 md:py-24">
+    <section className="relative overflow-hidden bg-cream py-12 md:py-20">
       {/* Peeche halki blueprint lines (architect ke auzaar, plan, elevation) */}
       <BlueprintDoodles />
-      <Container className="relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <Container className="relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <ContactInfo />
         <ContactForm />
       </Container>

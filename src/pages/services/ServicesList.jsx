@@ -7,8 +7,8 @@ import services from "../../data/services";
 
 // Har service ek row: ek taraf photo, doosri taraf text. Rows baari-baari left/right badalti hain.
 const ServicesList = () => (
-  <section className="py-16 md:py-24">
-    <Container className="space-y-20 md:space-y-28">
+  <section className="py-12 md:py-20">
+    <Container className="space-y-14 md:space-y-20">
       {services.map((s, i) => {
         const Icon = s.icon;
         const flip = i % 2 === 1;

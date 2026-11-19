@@ -13,7 +13,7 @@ const items = [
 ];
 
 const MissionVision = () => (
-  <section className="bg-forest py-20">
+  <section className="bg-forest py-12 md:py-16">
     <Container className="grid gap-8 md:grid-cols-2">
       {items.map((i) => (
         <div key={i.title} className="border-t-2 border-accent bg-white p-8 md:p-10">

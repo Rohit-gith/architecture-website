@@ -132,7 +132,7 @@ const BlogPost = () => {
 
       {/* More articles */}
       {related.length > 0 && (
-        <section className="bg-cream py-16 md:py-20">
+        <section className="bg-cream py-12 md:py-16">
           <Container>
             <h2 className="mb-10 text-3xl font-medium">More Articles</h2>
             <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 md:gap-10">

@@ -1,5 +1,5 @@
 const SectionTitle = ({ eyebrow, title, subtitle, align = "center", light = false }) => (
-  <div className={`mb-12 ${align === "center" ? "text-center" : ""}`}>
+  <div className={`mb-8 md:mb-10 ${align === "center" ? "text-center" : ""}`}>
     {eyebrow && <p className="mb-3 text-[11px] uppercase tracking-[0.3em] text-accent">{eyebrow}</p>}
     <h2 className={`text-3xl md:text-4xl font-medium ${light ? "text-white" : ""}`}>{title}</h2>
     {subtitle && (

@@ -2,7 +2,7 @@ import Container from "../../components/common/Container";
 import { categories } from "../../data/projects";
 
 const ProjectFilter = ({ active, onChange }) => (
-  <Container className="pt-12">
+  <Container className="pt-10">
     <div className="flex flex-wrap justify-center gap-3">
       {categories.map((c) => (
         <button

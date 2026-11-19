@@ -6,8 +6,8 @@ import leadership from "../../data/leadership";
 const Leadership = () => (
   <>
     <PageHero title="Leadership" subtitle="The people who guide our vision and values." />
-    <section className="py-20 md:py-28">
-      <Container className="space-y-24">
+    <section className="py-12 md:py-20">
+      <Container className="space-y-16 md:space-y-20">
         {leadership.map((l, i) => (
           <div key={l.id} className="grid gap-12 md:grid-cols-2 items-center">
             <div className={`aspect-[4/5] ${i % 2 ? "md:order-2" : ""}`}>

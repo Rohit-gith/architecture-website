@@ -27,9 +27,9 @@ const FeaturedProjects = () => {
   const [first, ...rest] = projects.slice(0, 3);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-20">
       <Container>
-        <Reveal className="mb-10 flex items-end justify-between gap-4">
+        <Reveal className="mb-8 md:mb-10 flex items-end justify-between gap-4">
           <div>
             <p className="mb-3 text-[11px] uppercase tracking-[0.3em] text-accent">Featured Projects</p>
             <h2 className="text-3xl md:text-4xl font-medium">Our Recent Work</h2>

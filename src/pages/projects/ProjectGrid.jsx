@@ -7,7 +7,7 @@ const ProjectGrid = ({ active = "All" }) => {
   const list = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="pt-8 pb-12 md:pt-10 md:pb-20">
       <Container>
         {list.length === 0 ? (
           <p className="text-center text-neutral-500">No projects in this category yet.</p>

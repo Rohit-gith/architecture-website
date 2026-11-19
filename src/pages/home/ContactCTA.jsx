@@ -3,7 +3,7 @@ import Button from "../../components/common/Button";
 
 // Background image upar wale "Why Choose Us" se alag rakho, warna dono sections chipke hue lagte hain
 const ContactCTA = () => (
-  <section className="relative overflow-hidden bg-ink py-20 text-white md:py-24">
+  <section className="relative overflow-hidden bg-ink py-14 text-white md:py-20">
     <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/images/projects/hotel-gothapatna/1.webp)" }} />
     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/45" />
     <Container className="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">

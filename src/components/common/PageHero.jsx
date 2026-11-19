@@ -6,7 +6,7 @@ import Container from "./Container";
 // Ek hi jagah badlo, sab pages me apne aap badal jayega.
 // decor: banner ke peeche optional sajawat (jaise Contact page par blueprint lines)
 const PageHero = ({ title, subtitle, decor = null }) => (
-  <section className="relative overflow-hidden border-b border-accent/40 bg-[#efebe4] py-16 md:py-24">
+  <section className="relative overflow-hidden border-b border-accent/40 bg-[#efebe4] py-10 md:py-16">
     {decor}
     <Container className="relative">
       <nav

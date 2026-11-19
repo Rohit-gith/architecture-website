@@ -20,7 +20,7 @@ const Blog = () => {
     <>
       <PageHero title="Blog" subtitle="Ideas, guides and stories on architecture, interiors and sustainable living." />
 
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-16">
         <Container>
           <div className="mb-10 flex flex-wrap gap-2 md:mb-14">
             {categories.map((c) => (
@@ -64,7 +64,7 @@ const Blog = () => {
           )}
 
           {rest.length > 0 && (
-            <div className="mt-14 grid gap-12 border-t border-neutral-200 pt-14 md:grid-cols-2 lg:grid-cols-3 md:gap-10">
+            <div className="mt-12 grid gap-10 border-t border-neutral-200 pt-12 md:grid-cols-2 lg:grid-cols-3 md:gap-10">
               {rest.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 100} className="h-full">
                   <BlogCard post={p} />

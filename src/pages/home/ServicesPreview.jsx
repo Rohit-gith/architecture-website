@@ -5,7 +5,7 @@ import Reveal from "../../components/common/Reveal";
 import services from "../../data/services";
 
 const ServicesPreview = () => (
-  <section className="py-16 md:py-20 bg-cream">
+  <section className="py-12 md:py-16 bg-cream">
     <Container>
       <SectionTitle
         eyebrow="Our Services"

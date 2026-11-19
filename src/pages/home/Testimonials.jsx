@@ -5,7 +5,7 @@ import Reveal from "../../components/common/Reveal";
 import testimonials from "../../data/testimonials";
 
 const Testimonials = () => (
-  <section className="bg-cream py-16 md:py-24">
+  <section className="bg-cream py-12 md:py-20">
     <Container>
       <Reveal>
         <SectionTitle

@@ -4,7 +4,7 @@ import TeamCard from "../../components/ui/TeamCard";
 import team from "../../data/team";
 
 const Team = () => (
-  <section className="py-20 md:py-28">
+  <section className="py-12 md:py-20">
     <Container>
       <SectionTitle title="Meet Our Team" subtitle="The people who design and deliver your projects." />
       <div className="grid gap-8 grid-cols-2 md:grid-cols-4">

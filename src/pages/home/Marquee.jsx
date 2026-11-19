@@ -14,7 +14,7 @@ const Row = ({ hidden = false }) => (
 
 // Same row do baar, aur -50% tak khiskane se patti bina ruke chalti rehti hai
 const Marquee = () => (
-  <section className="overflow-hidden border-y border-accent/30 bg-cream py-8 md:py-10" aria-label="What we do">
+  <section className="overflow-hidden border-y border-accent/30 bg-cream py-6 md:py-8" aria-label="What we do">
     <div className="flex w-max animate-marquee motion-reduce:animate-none">
       <Row />
       <Row hidden />

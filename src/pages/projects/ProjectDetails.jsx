@@ -106,7 +106,7 @@ const ProjectDetails = () => {
 
       {/* Challenge / Solution / Highlights */}
       {(project.overview?.length > 0 || project.highlights?.length > 0) && (
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <Container className={`grid gap-12 ${project.highlights?.length ? "lg:grid-cols-[1.4fr_1fr]" : "max-w-4xl"}`}>
             {project.overview?.length > 0 && (
               <Reveal>
@@ -136,7 +136,7 @@ const ProjectDetails = () => {
 
       {/* Gallery (sirf tab dikhega jab data me photos hon) */}
       {project.gallery?.length > 0 && (
-        <section className="pb-16 md:pb-24">
+        <section className="pb-12 md:pb-16">
           <Container className="grid gap-4 sm:grid-cols-2">
             {project.gallery.map((src, i) => (
               <Reveal key={src} delay={(i % 2) * 100} className="aspect-[4/3] overflow-hidden">
@@ -169,7 +169,7 @@ const ProjectDetails = () => {
       </section>
 
       {/* More projects */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <Container>
           <div className="mb-10 flex items-end justify-between gap-4">
             <h2 className="text-3xl font-medium md:text-4xl">More Projects</h2>

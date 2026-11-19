@@ -12,7 +12,7 @@ const stats = [
 ];
 
 const CompanyStory = () => (
-  <section className="py-20 md:py-28">
+  <section className="py-12 md:py-20">
     <Container>
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
@@ -37,7 +37,7 @@ const CompanyStory = () => (
           <ImageBox src="/images/about/our-story.webp" alt="Aerial view of a villa and landscaped garden designed by Urban Crafting" />
         </div>
       </div>
-      <div className="mt-20 grid grid-cols-2 gap-8 text-center md:grid-cols-4">
+      <div className="mt-12 grid grid-cols-2 md:mt-16 gap-8 text-center md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label}>
             <p className="font-heading text-4xl text-accent md:text-5xl"><CountUp value={s.value} /></p>

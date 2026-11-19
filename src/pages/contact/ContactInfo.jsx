@@ -14,7 +14,7 @@ const ContactInfo = () => {
   return (
     <div>
       <SectionTitle align="left" eyebrow="Get In Touch" title="Let's Talk About Your Project" />
-      <p className="-mt-6 mb-10 max-w-md leading-relaxed text-neutral-600">
+      <p className="-mt-4 mb-10 max-w-md leading-relaxed text-neutral-600">
         Share your idea with us and our team will get back to you within 24 hours to discuss the next steps.
       </p>
 
